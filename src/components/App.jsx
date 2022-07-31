@@ -33,6 +33,11 @@ class App extends Component {
     }));
   };
 
+  deleteContact = contactId =>
+    this.setState(({ contacts }) => ({
+      contacts: contacts.filter(({ id }) => id !== contactId),
+    }));
+
   filteringContacts = () => {
     const { contacts, filter } = this.state;
     const normalizeFilter = filter.toLowerCase();
@@ -53,7 +58,10 @@ class App extends Component {
 
         <h2>Contacts</h2>
         <Filter filter={filter} onChange={this.handleChangeFilter} />
-        <ContactList filteredContacts={filteredContacts} />
+        <ContactList
+          filteredContacts={filteredContacts}
+          onDelete={this.deleteContact}
+        />
       </div>
     );
   }

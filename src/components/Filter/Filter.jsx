@@ -2,7 +2,7 @@ import React from 'react';
 
 const Filter = ({ filter, onChange }) => {
   return (
-    <>
+    <span>
       <p>Find contacts by name</p>
       <input
         type="text"
@@ -11,7 +11,7 @@ const Filter = ({ filter, onChange }) => {
         value={filter}
         onChange={onChange}
       />
-    </>
+    </span>
   );
 };
 

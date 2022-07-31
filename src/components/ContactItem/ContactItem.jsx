@@ -1,10 +1,12 @@
 import React from 'react';
 
-const ContactItem = ({ name, number }) => {
+const ContactItem = ({ id, name, number, onDelete }) => {
   return (
     <li>
       {name}: {number}
-      <button type="button">Delete</button>
+      <button onClick={() => onDelete(id)} type="button">
+        Delete
+      </button>
     </li>
   );
 };
