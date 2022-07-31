@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import ContactForm from './ContactForm';
+import ContactList from './ContactList';
 
 class App extends Component {
   state = {
@@ -25,7 +26,7 @@ class App extends Component {
     }));
   };
 
-  filterContacts = () => {
+  filteringContacts = () => {
     const { contacts, filter } = this.state;
     const normalizeFilter = filter.toLowerCase();
     return contacts.filter(({ name }) =>
@@ -34,13 +35,14 @@ class App extends Component {
   };
 
   render() {
-    const { contacts, filter, name, number } = this.state;
-    const filteredContacts = this.filterContacts();
+    const { filter } = this.state;
+    const filteredContacts = this.filteringContacts();
 
     return (
       <div style={{ padding: '10px' }}>
         <h1 style={{ marginBottom: '20px' }}>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
+
         <h2>Contacts</h2>
         <p>Find contacts by name</p>
         <input
@@ -49,12 +51,7 @@ class App extends Component {
           value={filter}
           onChange={this.handleChange}
         />
-        {filteredContacts.map(({ id, name, number }) => (
-          <li key={id}>
-            {name}: {number}
-            <button type="button">Delete</button>
-          </li>
-        ))}
+        <ContactList filteredContacts={filteredContacts} />
       </div>
     );
   }
