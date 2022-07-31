@@ -6,7 +6,7 @@ const ContactItem = ({ id, name, number, onDelete }) => {
   return (
     <ContactsItem>
       <ContactName>
-        {name}: {number}
+        {name}: <a href="tel:">{number}</a>
       </ContactName>
       <ContactDelete onClick={() => onDelete(id)} type="button">
         Delete
