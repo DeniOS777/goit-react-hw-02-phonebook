@@ -9,5 +9,5 @@ export const PhonebookTitle = styled.h1`
 `;
 
 export const ContactsTitle = styled.h2`
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 `;

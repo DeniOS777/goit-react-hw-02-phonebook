@@ -1,17 +1,18 @@
 import React from 'react';
+import { FilterLabel, InputSearch } from './Filter.styled';
 
 const Filter = ({ filter, onChange }) => {
   return (
-    <span>
-      <p>Find contacts by name</p>
-      <input
+    <>
+      <FilterLabel>Find contacts by name:</FilterLabel>
+      <InputSearch
         type="text"
         name="filter"
         placeholder="Search contacts..."
         value={filter}
         onChange={onChange}
       />
-    </span>
+    </>
   );
 };
 

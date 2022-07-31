@@ -35,12 +35,14 @@ export const AddContact = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  padding: 7px;
   font-size: 16px;
+  font-weight: 600;
   color: #ffffff;
   background-color: #0f860f;
   border-style: none;
   border-radius: 5px;
+  cursor: pointer;
   transition: background-color 0.25s cubic-bezier(0.23, 1, 0.32, 1),
     transform 0.25s cubic-bezier(0.23, 1, 0.32, 1);
 
