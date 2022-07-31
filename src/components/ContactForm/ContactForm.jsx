@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 
-import { Form, Label, Input } from './ContactForm.styled';
+import { Form, Label, Input, AddContact } from './ContactForm.styled';
 
 class ContactForm extends Component {
   state = {
@@ -53,7 +53,7 @@ class ContactForm extends Component {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />
-        <button type="submit">Add contact</button>
+        <AddContact type="submit">Add contact</AddContact>
       </Form>
     );
   }
