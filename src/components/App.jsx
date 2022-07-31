@@ -3,7 +3,13 @@ import { nanoid } from 'nanoid';
 
 class App extends Component {
   state = {
-    contacts: [],
+    contacts: [
+      { id: nanoid(), name: 'Rosie Simpson', number: '459-12-56' },
+      { id: nanoid(), name: 'Hermione Kline', number: '443-89-12' },
+      { id: nanoid(), name: 'Eden Clements', number: '645-17-79' },
+      { id: nanoid(), name: 'Annie Copeland', number: '227-91-26' },
+    ],
+    filter: '',
     name: '',
     number: '',
   };
@@ -37,7 +43,7 @@ class App extends Component {
   resetForm = () => this.setState({ name: '', number: '' });
 
   render() {
-    const { contacts, name, number } = this.state;
+    const { contacts, filter, name, number } = this.state;
 
     return (
       <div style={{ padding: '10px' }}>
@@ -50,7 +56,7 @@ class App extends Component {
             flexDirection: 'column',
             marginBottom: '20px',
             padding: '20px',
-            width: '300px',
+            width: '350px',
             border: '1px solid #000',
           }}
         >
@@ -60,7 +66,7 @@ class App extends Component {
           <input
             style={{ marginBottom: '20px' }}
             id={this.inputNameId}
-            placeholder="Add contact..."
+            placeholder="Enter contact..."
             type="text"
             name="name"
             value={name}
@@ -75,7 +81,7 @@ class App extends Component {
           <input
             style={{ marginBottom: '20px' }}
             id={this.inputNumberId}
-            placeholder="Add phone number..."
+            placeholder="Enter number..."
             type="tel"
             name="number"
             value={number}
@@ -87,6 +93,13 @@ class App extends Component {
           <button type="submit">Add contact</button>
         </form>
         <h2>Contacts</h2>
+        <p>Find contacts by name</p>
+        <input
+          type="text"
+          name="filter"
+          value={filter}
+          onChange={this.handleChange}
+        />
         {contacts.map(contact => (
           <li key={contact.id}>
             {contact.name}: {contact.number}
