@@ -1,13 +1,17 @@
 import React from 'react';
 
+import { ContactsItem, ContactName, ContactDelete } from './ContactItem.styled';
+
 const ContactItem = ({ id, name, number, onDelete }) => {
   return (
-    <li>
-      {name}: {number}
-      <button onClick={() => onDelete(id)} type="button">
+    <ContactsItem>
+      <ContactName>
+        {name}: {number}
+      </ContactName>
+      <ContactDelete onClick={() => onDelete(id)} type="button">
         Delete
-      </button>
-    </li>
+      </ContactDelete>
+    </ContactsItem>
   );
 };
 
