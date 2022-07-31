@@ -1,7 +1,7 @@
 import React from 'react';
 import ContactItem from '../ContactItem';
 
-const ContactList = ({ filteredContacts, onDelete }) => {
+const ContactList = ({ filteredContacts, onDeleteContact }) => {
   return (
     <ul>
       {filteredContacts.map(({ id, name, number }) => (
@@ -10,7 +10,7 @@ const ContactList = ({ filteredContacts, onDelete }) => {
           id={id}
           name={name}
           number={number}
-          onDelete={onDelete}
+          onDelete={onDeleteContact}
         />
       ))}
     </ul>

@@ -4,6 +4,8 @@ import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Filter from './Filter';
 
+import { Phonebook, PhonebookTitle, ContactsTitle } from './App.styled';
+
 class App extends Component {
   state = {
     contacts: [
@@ -52,17 +54,17 @@ class App extends Component {
     const filteredContacts = this.filteringContacts();
 
     return (
-      <div style={{ padding: '10px' }}>
-        <h1 style={{ marginBottom: '20px' }}>Phonebook</h1>
+      <Phonebook>
+        <PhonebookTitle>Phonebook ☎️</PhonebookTitle>
         <ContactForm onSubmit={this.addContact} />
 
-        <h2>Contacts</h2>
+        <ContactsTitle>Contacts</ContactsTitle>
         <Filter filter={filter} onChange={this.handleChangeFilter} />
         <ContactList
           filteredContacts={filteredContacts}
-          onDelete={this.deleteContact}
+          onDeleteContact={this.deleteContact}
         />
-      </div>
+      </Phonebook>
     );
   }
 }
