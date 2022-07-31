@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 
+import { Form, Label, Input } from './ContactForm.styled';
+
 class ContactForm extends Component {
   state = {
     name: '',
@@ -26,23 +28,9 @@ class ContactForm extends Component {
   render() {
     const { name, number } = this.state;
     return (
-      <form
-        onSubmit={this.handleSubmit}
-        autoComplete="off"
-        style={{
-          display: 'inline-flex',
-          flexDirection: 'column',
-          marginBottom: '20px',
-          padding: '20px',
-          width: '350px',
-          border: '1px solid #000',
-        }}
-      >
-        <label style={{ marginBottom: '5px' }} htmlFor={this.inputNameId}>
-          Name
-        </label>
-        <input
-          style={{ marginBottom: '20px' }}
+      <Form onSubmit={this.handleSubmit} autoComplete="off">
+        <Label htmlFor={this.inputNameId}>Name</Label>
+        <Input
           id={this.inputNameId}
           placeholder="Enter contact..."
           type="text"
@@ -53,11 +41,8 @@ class ContactForm extends Component {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
-        <label style={{ marginBottom: '5px' }} htmlFor={this.inputNumberId}>
-          Number
-        </label>
-        <input
-          style={{ marginBottom: '20px' }}
+        <Label htmlFor={this.inputNumberId}>Number</Label>
+        <Input
           id={this.inputNumberId}
           placeholder="Enter number..."
           type="tel"
@@ -69,7 +54,7 @@ class ContactForm extends Component {
           required
         />
         <button type="submit">Add contact</button>
-      </form>
+      </Form>
     );
   }
 }
