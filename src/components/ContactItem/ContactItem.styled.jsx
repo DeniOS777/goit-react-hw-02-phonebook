@@ -18,13 +18,14 @@ export const ContactDelete = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 10px;
+  padding: 4px 7px;
   font-size: 16px;
   letter-spacing: 0.02em;
   color: #ffffff;
   border-style: none;
   background-color: #c91c1c;
   border-radius: 3px;
+  filter: drop-shadow(1px 1px 1px #303030);
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, transform 0.15s ease-in-out;
 
