@@ -29,6 +29,14 @@ class App extends Component {
     }));
   };
 
+  filterContacts = () => {
+    const { contacts, filter } = this.state;
+    const normalizeFilter = filter.toLowerCase();
+    return contacts.filter(({ name }) =>
+      name.toLowerCase().includes(normalizeFilter)
+    );
+  };
+
   handleChange = e => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
@@ -40,10 +48,11 @@ class App extends Component {
     this.resetForm();
   };
 
-  resetForm = () => this.setState({ name: '', number: '' });
+  resetForm = () => this.setState({ name: '', number: '', filter: '' });
 
   render() {
     const { contacts, filter, name, number } = this.state;
+    const filteredContacts = this.filterContacts();
 
     return (
       <div style={{ padding: '10px' }}>
@@ -100,8 +109,8 @@ class App extends Component {
           value={filter}
           onChange={this.handleChange}
         />
-        {contacts.map(contact => (
-          <li key={contact.id}>
+        {filteredContacts.map(contact => (
+          <li key={contact.name}>
             {contact.name}: {contact.number}
             <button type="button">Delete</button>
           </li>
