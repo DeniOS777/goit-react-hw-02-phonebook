@@ -5,7 +5,7 @@ export const Form = styled.form`
   flex-direction: column;
   margin-bottom: 20px;
   padding: 20px;
-  width: 300px;
+  width: 370px;
   border: 1px solid #000;
   border-radius: 3px;
 `;
@@ -43,8 +43,7 @@ export const AddContact = styled.button`
   border-style: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.25s cubic-bezier(0.23, 1, 0.32, 1),
-    transform 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: background-color 0.3s ease-in-out, transform 0.25s ease-in-out;
 
   &:hover,
   :focus {

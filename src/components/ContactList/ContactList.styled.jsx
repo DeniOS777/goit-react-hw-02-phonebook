@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
 export const ContactsList = styled.ul`
-  padding: 0 15px;
+  padding-left: 10px;
+  width: 370px;
 `;

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ContactsItem = styled.li`
   display: flex;
+  justify-content: space-between;
   align-items: center;
 
   &:not(:last-child) {
@@ -10,7 +11,7 @@ export const ContactsItem = styled.li`
 `;
 
 export const ContactName = styled.p`
-  font-size: 18px;
+  font-size: 16px;
 `;
 
 export const ContactDelete = styled.button`
@@ -25,8 +26,7 @@ export const ContactDelete = styled.button`
   background-color: #c91c1c;
   border-radius: 3px;
   cursor: pointer;
-  transition: background-color 0.25s cubic-bezier(0.23, 1, 0.32, 1),
-    transform 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: background-color 0.3s ease-in-out, transform 0.15s ease-in-out;
 
   &:hover,
   :focus {
