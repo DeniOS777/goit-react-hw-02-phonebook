@@ -1,9 +1,11 @@
 import React from 'react';
 import ContactItem from '../ContactItem';
 
+import { ContactsList } from './ContactList.styled';
+
 const ContactList = ({ filteredContacts, onDeleteContact }) => {
   return (
-    <ul>
+    <ContactsList>
       {filteredContacts.map(({ id, name, number }) => (
         <ContactItem
           key={id}
@@ -13,7 +15,7 @@ const ContactList = ({ filteredContacts, onDeleteContact }) => {
           onDelete={onDeleteContact}
         />
       ))}
-    </ul>
+    </ContactsList>
   );
 };
 
