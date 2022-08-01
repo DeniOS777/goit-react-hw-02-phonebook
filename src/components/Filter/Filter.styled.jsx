@@ -11,12 +11,12 @@ export const InputSearch = styled.input`
   padding: 2px 10px;
   font-size: 16px;
   letter-spacing: 0.03em;
-  border: 1px solid #888888;
+  border: ${({ theme }) => `1px solid ${theme.colors.inputBorder}`};
   border-radius: 5px;
 
   &::placeholder {
     font-size: 14px;
-    color: #2a2a2a;
+    color: ${({ theme }) => theme.colors.inputPlaceholder};
     letter-spacing: 0.03em;
   }
 `;

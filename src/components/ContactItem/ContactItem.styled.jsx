@@ -21,16 +21,16 @@ export const ContactDelete = styled.button`
   padding: 4px 7px;
   font-size: 16px;
   letter-spacing: 0.02em;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
   border-style: none;
-  background-color: #c91c1c;
+  background-color: ${({ theme }) => theme.colors.red};
   border-radius: 3px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out, transform 0.15s ease-in-out;
+  transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;
 
   &:hover,
   :focus {
-    background-color: #b81717;
+    background-color: ${({ theme }) => theme.colors.redHover};
   }
 
   &:active {

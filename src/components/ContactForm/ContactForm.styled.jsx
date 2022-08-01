@@ -6,7 +6,7 @@ export const Form = styled.form`
   margin-bottom: 20px;
   padding: 20px;
   width: 370px;
-  border: 1px solid #000;
+  border: ${({ theme }) => `1px solid ${theme.colors.inputBorder}`};
   border-radius: 3px;
 `;
 
@@ -21,12 +21,12 @@ export const Input = styled.input`
   padding: 2px 10px;
   font-size: 16px;
   letter-spacing: 0.03em;
-  border: 1px solid #888888;
+  border: ${({ theme }) => `1px solid ${theme.colors.inputBorder}`};
   border-radius: 3px;
 
   &::placeholder {
     font-size: 14px;
-    color: #2a2a2a;
+    color: ${({ theme }) => theme.colors.textPlaceholder};
     letter-spacing: 0.03em;
   }
 `;
@@ -38,8 +38,8 @@ export const AddContact = styled.button`
   padding: 7px;
   font-size: 16px;
   font-weight: 600;
-  color: #ffffff;
-  background-color: #0f860f;
+  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.green};
   border-style: none;
   border-radius: 5px;
   cursor: pointer;
@@ -47,7 +47,7 @@ export const AddContact = styled.button`
 
   &:hover,
   :focus {
-    background-color: #0e7e0e;
+    background-color: ${({ theme }) => theme.colors.greenHover};
   }
 
   &:active {
