@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
+
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Filter from './Filter';
@@ -21,12 +22,17 @@ class App extends Component {
 
   addContact = ({ name, number }) => {
     const { contacts } = this.state;
+
     const newContact = {
       id: nanoid(),
       name,
       number,
     };
-    if (contacts.find(contact => contact.name === name)) {
+    const normalizeFindDuplicateContacts = contacts.find(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
+
+    if (normalizeFindDuplicateContacts) {
       return alert(`${name} is already in contacts`);
     }
 
