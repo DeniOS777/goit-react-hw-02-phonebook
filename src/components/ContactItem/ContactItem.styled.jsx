@@ -25,7 +25,6 @@ export const ContactDelete = styled.button`
   border-style: none;
   background-color: #c91c1c;
   border-radius: 3px;
-  filter: drop-shadow(0px 1px 1px #303030);
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, transform 0.15s ease-in-out;
 
