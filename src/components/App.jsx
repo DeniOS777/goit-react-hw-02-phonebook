@@ -46,7 +46,7 @@ class App extends Component {
       contacts: contacts.filter(({ id }) => id !== contactId),
     }));
 
-  filteringContacts = () => {
+  getFilteredContacts = () => {
     const { contacts, filter } = this.state;
     const normalizeFilter = filter.toLowerCase();
 
@@ -57,7 +57,7 @@ class App extends Component {
 
   render() {
     const { filter } = this.state;
-    const filteredContacts = this.filteringContacts();
+    const filteredContacts = this.getFilteredContacts();
 
     return (
       <Phonebook>
