@@ -6,12 +6,13 @@ export const FilterLabel = styled.p`
 `;
 
 export const InputSearch = styled.input`
+  margin-right: 5px;
   margin-bottom: 15px;
   padding: 2px 10px;
   font-size: 16px;
   letter-spacing: 0.03em;
   border: 1px solid #888888;
-  border-radius: 3px;
+  border-radius: 5px;
 
   &::placeholder {
     font-size: 14px;

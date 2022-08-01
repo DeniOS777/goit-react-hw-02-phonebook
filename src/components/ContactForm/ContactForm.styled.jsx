@@ -42,9 +42,9 @@ export const AddContact = styled.button`
   background-color: #0f860f;
   border-style: none;
   border-radius: 5px;
-  filter: drop-shadow(1px 1px 1px #303030);
+  filter: drop-shadow(0px 1px 1px #303030);
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out, transform 0.25s ease-in-out;
+  transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;
 
   &:hover,
   :focus {
@@ -52,6 +52,6 @@ export const AddContact = styled.button`
   }
 
   &:active {
-    transform: scale(0.97);
+    transform: scale(0.98);
   }
 `;

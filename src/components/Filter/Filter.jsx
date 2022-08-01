@@ -12,6 +12,7 @@ const Filter = ({ filter, onChange }) => {
         value={filter}
         onChange={onChange}
       />
+      🔎
     </>
   );
 };
