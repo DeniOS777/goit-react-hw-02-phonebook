@@ -1,6 +1,8 @@
-@import-normalize; /* bring in normalize.css styles */
+import { createGlobalStyle } from 'styled-components';
+import 'normalize.css';
 
-*,
+export const GlobalStyle = createGlobalStyle`
+  *,
 ::after,
 ::before {
   margin: 0;
@@ -9,13 +11,12 @@
 }
 
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(241, 241, 241);
+  background-color: ${p => p.theme.colors.bodyBackgroundColor};
 }
 
 h1,
@@ -30,6 +31,6 @@ p {
 
 ul {
   padding: 0;
-  margin: 0;
   list-style: none;
 }
+`;

@@ -8,5 +8,6 @@ export const theme = {
     redHover: '#b81717',
     inputBorder: '#888888',
     textPlaceholder: '#2a2a2a',
+    bodyBackgroundColor: '#f1f1f1',
   },
 };

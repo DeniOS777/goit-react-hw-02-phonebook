@@ -18,7 +18,7 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   margin-bottom: 20px;
-  padding: 2px 10px;
+  padding: 5px 10px;
   font-size: 16px;
   letter-spacing: 0.03em;
   border: ${({ theme }) => `1px solid ${theme.colors.inputBorder}`};

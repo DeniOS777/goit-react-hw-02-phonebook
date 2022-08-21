@@ -5,6 +5,7 @@ import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Filter from './Filter';
 
+import { GlobalStyle } from './GlobalStyle';
 import { Phonebook, PhonebookTitle, ContactsTitle } from './App.styled';
 
 class App extends Component {
@@ -62,14 +63,18 @@ class App extends Component {
     return (
       <Phonebook>
         <PhonebookTitle>Phonebook ☎️</PhonebookTitle>
+
         <ContactForm onSubmit={this.addContact} />
 
         <ContactsTitle>Contacts</ContactsTitle>
+
         <Filter filter={filter} onChange={this.handleChangeFilter} />
+
         <ContactList
           filteredContacts={filteredContacts}
           onDeleteContact={this.deleteContact}
         />
+        <GlobalStyle />
       </Phonebook>
     );
   }
