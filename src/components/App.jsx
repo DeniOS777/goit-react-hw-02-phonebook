@@ -23,12 +23,6 @@ class App extends Component {
 
   addContact = ({ name, number }) => {
     const { contacts } = this.state;
-
-    const newContact = {
-      id: nanoid(),
-      name,
-      number,
-    };
     const normalizeFindDuplicateContacts = contacts.find(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
@@ -36,6 +30,11 @@ class App extends Component {
     if (normalizeFindDuplicateContacts) {
       return alert(`${name} is already in contacts`);
     }
+    const newContact = {
+      id: nanoid(),
+      name,
+      number,
+    };
 
     this.setState(prevState => ({
       contacts: [newContact, ...prevState.contacts],
